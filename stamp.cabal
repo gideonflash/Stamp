@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 45dd011c97fd220339351448f88ca167119ccc291556881d654f26fb0603807b
+-- hash: cc4a96440f71e47eea63231ba06e20c49136e66d3179221aa762d6c4a1bbb98f
 
 name:           stamp
 version:        0.1.0.0
@@ -27,6 +27,7 @@ source-repository head
 
 library
   exposed-modules:
+      Db
       Lib
       Stamp
   other-modules:
@@ -36,6 +37,8 @@ library
   build-depends:
       base >=4.7 && <5
     , directory >=1.3.6.0
+    , postgresql-simple
+    , time
   default-language: Haskell2010
 
 executable stamp-exe
@@ -48,7 +51,9 @@ executable stamp-exe
   build-depends:
       base >=4.7 && <5
     , directory >=1.3.6.0
+    , postgresql-simple
     , stamp
+    , time
   default-language: Haskell2010
 
 test-suite stamp-test
@@ -62,5 +67,7 @@ test-suite stamp-test
   build-depends:
       base >=4.7 && <5
     , directory >=1.3.6.0
+    , postgresql-simple
     , stamp
+    , time
   default-language: Haskell2010
